@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Uso_cocina {
+
+	public static void main(String[] args) {
+		String a;
+		Scanner sc=new Scanner(System.in);
+		
+		Cocina cocina1=new Cocina();
+		
+		System.out.println("Inroduzca el nombre de la cocina: ");
+		
+		a=sc.nextLine();
+		
+		cocina1.asignaNomCocina(a);
+		
+		System.out.println("Diga si la cocina tiene un frigorífico: (si/no): ");
+		
+		a=sc.nextLine();
+		
+		cocina1.preguntaFrigorifico(a);
+		
+        System.out.println(cocina1.infoMob());
+	}
+
+}

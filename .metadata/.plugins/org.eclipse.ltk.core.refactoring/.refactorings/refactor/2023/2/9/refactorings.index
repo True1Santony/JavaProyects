@@ -1,0 +1,11 @@
+1677494955773	Move compilation unit
+1677495001290	Rename type 'Circulo'
+1677495094048	Rename field 'rad'
+1677495151492	Convert local variable 'color' to field
+1677495340639	Extract local variable 'd'
+1677495422514	Extract constant 'PI'
+1677495567392	Extract method 'calcularArea'
+1677495711660	Change method 'esIgual'
+1677495875424	Inline local variable 'd'
+1677495935988	Inline method 'calcularArea'
+1677495967442	Inline constant 'PI'

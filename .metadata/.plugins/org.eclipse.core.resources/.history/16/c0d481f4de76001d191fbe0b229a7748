@@ -1,0 +1,109 @@
+
+public class Cocina {
+
+	private String cocina_nombre;
+	
+	private boolean si_no_frigo;
+	
+	private boolean si_no_placa;
+	
+	private String miFrig;
+	
+	private String miPlaca;
+	
+	
+	public Cocina(){
+		
+		cocina_nombre="";
+		si_no_frigo=false;
+		si_no_placa=false;
+		miFrig="";
+		miPlaca="";
+		
+		
+	}
+	public void asignaNomCocina(String cocina_nombre) {
+		
+		this.cocina_nombre=cocina_nombre;
+	}
+	public void preguntaFrigorifico(String respuesta) {
+		
+		if(respuesta.equalsIgnoreCase("si")) {
+			si_no_frigo=true;
+		}else {
+			si_no_frigo=false;
+		}
+	}
+	
+	public String infoMob() {//getter
+		
+		if(si_no_frigo==false && si_no_placa==false) {
+			
+			return "La cocina: "+ cocina_nombre+" no tiene frigorífico ni tiene placa. ";
+			
+		}else if(si_no_frigo==true && si_no_placa==false){
+			
+			return "La cocina: "+ cocina_nombre+". Tiene un frigorífico de la marca: "+ miFrig+" y no tiene placa." ;
+			
+		}else if(si_no_frigo==false && si_no_placa==true) {
+			
+			return "La cocina: "+ cocina_nombre+". No tiene frigorifico "+ " El color de la placa es: " + miPlaca ;
+		}else {
+			return "La cocina: " + cocina_nombre+ " Tine el frigorifico de la marca: " + miFrig+" y tiene la placa de color: "+ miPlaca;
+		}
+	}
+	class frigorifico{
+		
+		public String marca_frigo;
+		
+		
+		
+	public void setMarca(String asigna_marca) {//setter
+		
+		 marca_frigo=asigna_marca;
+			
+		}
+	public String getMarca(String devuelve_marca) {//getter
+		
+		return "El friforífico es de la marca: " + marca_frigo;
+	}
+		
+}
+
+	class placa{
+		private String color;
+		
+		public placa() {
+			
+			color="verde";
+		}
+		
+		public void setColor() {//setter
+			
+			double variable = Math.random()*10;
+			int num = (int)variable;
+			
+			if(num<3) {
+				
+				color="Marrón";
+				
+				}else if(num<6 && num>3){
+					
+					color="Azul";
+				}else {
+					
+					color="Verde";
+				}
+		}
+		
+		public String getColor(String devuelve_color_placa) {
+			
+			return "El color de la placa es: " + color;
+		}
+		
+	}
+
+	 
+	 
+	 
+ }

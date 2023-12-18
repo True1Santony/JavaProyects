@@ -1,0 +1,34 @@
+package tarea01;
+
+public class Productor implements Runnable {
+
+	private Buffer buffer;
+	private final String letras ="abcdefghijklmnopqrstuvwxyz";
+	private final int LIMITE=15;
+	private int producidos;
+	
+	public Productor(Buffer buffer) {
+		
+		producidos=0;
+		this.buffer=buffer;
+	}
+	
+	@Override
+	public void run() {
+		
+		while(producidos<LIMITE) {
+			
+			char a= Character.toUpperCase(letras.charAt((int)(Math.random()*letras.length())));
+			buffer.introducir(a);
+			producidos++;
+			System.out.println("Depositado el carácter " + a + " en el buffer++++++++");
+			try {
+				Thread.sleep((long) (Math.random()*2000));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

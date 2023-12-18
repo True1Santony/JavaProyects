@@ -1,0 +1,16 @@
+package tarea01;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Buffer b=new Buffer(6);
+
+		Thread t1=new Thread(new Productor(b));
+		Thread t2=new Thread(new Consumidor(b));
+		
+		t1.start();
+		t2.start();
+	}
+
+}

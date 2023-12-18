@@ -1,0 +1,21 @@
+package poo;
+
+public class Coche {//caracteristicas de la clase
+
+	int ruedas;
+	int largo;
+	int ancho;
+	int motor;
+	int peso;
+	 
+	
+	public Coche() {// el constructor, define lo que hace.
+		ruedas=4;
+		largo=2000;
+		ancho=300;
+		motor=1600;
+		peso=500;
+		
+		
+	}
+}
