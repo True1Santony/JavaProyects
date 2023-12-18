@@ -645,7 +645,7 @@
       <children xsi:type="basic:PartStack" xmi:id="_k0p81or_Ee68csioepSOeQ" elementId="PartStack@13253ac7" selectedElement="_z83qcJ3JEe6ZOvK3AwKe4A">
         <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_z83qcJ3JEe6ZOvK3AwKe4A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MariaDBSelect.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MariaDBSelect.java&quot; partName=&quot;MariaDBSelect.java&quot; title=&quot;MariaDBSelect.java&quot; tooltip=&quot;mariaDB/src/mariaDB1/MariaDBSelect.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/mariaDB/src/mariaDB1/MariaDBSelect.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;418&quot; selectionTopPixel=&quot;51&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MariaDBSelect.java&quot; partName=&quot;MariaDBSelect.java&quot; title=&quot;MariaDBSelect.java&quot; tooltip=&quot;mariaDB/src/mariaDB1/MariaDBSelect.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/mariaDB/src/mariaDB1/MariaDBSelect.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;302&quot; selectionTopPixel=&quot;51&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -961,7 +961,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_k0p-lYr_Ee68csioepSOeQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_1W33YJ3WEe6Fg-4apj8Juw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_k0rM5Ir_Ee68csioepSOeQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Qd02kJ3XEe6YYOIm1wrefQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_k0rM5Ir_Ee68csioepSOeQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_k0p-oor_Ee68csioepSOeQ" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -992,7 +992,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_k0p-6Yr_Ee68csioepSOeQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_1W5FhZ3WEe6Fg-4apj8Juw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_k0rMZor_Ee68csioepSOeQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Qd2rwJ3XEe6YYOIm1wrefQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_k0rMZor_Ee68csioepSOeQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_k0p-9Yr_Ee68csioepSOeQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
