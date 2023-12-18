@@ -12,7 +12,7 @@ public class MariaDBSelect {
 		
 			//String url = "jdbc:mysql://TNAS.online/MiNas-221:3306/Mia";
         String username = "espartaco";
-        String password = "Apr0bad0";
+        String password = "******";
  
 		try {
 			//1. CEANDO OBJETO CONEXIÓN
