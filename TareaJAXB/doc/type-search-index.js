@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"tarea","l":"Ayuntamientos"},{"p":"tarea","l":"DatosCenso"},{"p":"tarea","l":"Logica"}];updateSearchResults();
