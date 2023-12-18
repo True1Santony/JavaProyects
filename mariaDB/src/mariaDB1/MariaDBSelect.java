@@ -10,9 +10,9 @@ public class MariaDBSelect {
 	     // Configuración de la conexión a la base de datos
         String url = "jdbc:mysql://192.168.1.36:3306/Mia";
 		
-			// este no funciona String url = "jdbc:mysql://TNAS.online/MiNas-221:3306/Mia";
+			//String url = "jdbc:mysql://TNAS.online/MiNas-221:3306/Mia";
         String username = "espartaco";
-        String password = "******";
+        String password = "Apr0bad0";
  
 		try {
 			//1. CEANDO OBJETO CONEXIÓN
