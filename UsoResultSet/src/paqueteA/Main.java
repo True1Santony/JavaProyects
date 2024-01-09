@@ -24,7 +24,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		var a = 0;// a partir de java 10, para contar las tuplas actualizadas.
+		var a = 0;// a partir de java 10, para contar las tuplas/rows actualizadas.
 		
 		// bloque try
 		try (Connection conexion = DriverManager.getConnection("jdbc:mysql://192.168.1.36:3306/EmpDept", "root","Apr0bad0");
@@ -86,7 +86,7 @@ public class Main {
 				conexion.commit();
 				//se establece el autocomit de nuevo.
 				conexion.setAutoCommit(true);
-				
+				conexion.close();
 				
 
 			} catch (SQLException e) 
