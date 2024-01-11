@@ -30,13 +30,13 @@ public class Main {
 		try (Connection conexion = DriverManager.getConnection("jdbc:mysql://192.168.1.36:3306/EmpDept", "root","Apr0bad0");
 			PreparedStatement statement = conexion.prepareStatement("Select * FROM emp;",ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);) {
 
-			conexion.setAutoCommit(false); // Desactivar la confirmacion automática
+			conexion.setAutoCommit(false); // Desactiva la confirmacion automática
 			System.out.println("Conectado");
 
 			try (ResultSet rs = statement.executeQuery();)
 			{
 
-				while (rs.next()) 
+				while (rs.next()) //actualiza cada row en funcion de las condiciones dadas.
 				{
 					Date anio = rs.getDate("hiredate");
 					Double salario = rs.getDouble("sal");
