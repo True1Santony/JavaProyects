@@ -1,7 +1,9 @@
 package clienteServidorPKg;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -12,25 +14,41 @@ public class Cliente {
 	
 	static final String Host = "localhost";
     static final int Puerto=1500;
-	
+    private Socket cliente;
+    private DataOutputStream salida;
+    private DataInputStream entrada;
+    Scanner sc;
     
     public Cliente() {
-    	
+    	String linea="";
     	try {
-			Socket cliente =new Socket(Host,Puerto);
-			
-			OutputStream aux=cliente.getOutputStream();
-			DataOutputStream salida=new DataOutputStream(aux);
-			DataInputStream entrada = new DataInputStream(cliente.getInputStream());
-			
-			Scanner sc = new Scanner(System.in);
-			System.out.print("Ingrese el archivo que quiere consultar.");
-			
-			String leidoRutaArchUsuario=sc.nextLine();
+    		cliente =new Socket(Host,Puerto);
 			
 			
+			salida=new DataOutputStream(cliente.getOutputStream());
+			entrada = new DataInputStream(cliente.getInputStream());
+    		
+				do {
+	    		
+				
+					System.out.println("Ingrese el archivo que quiere consultar.");
+					sc = new Scanner(System.in);
+		
+					String leidoRutaArchUsuario=sc.nextLine();
+					
+					salida.writeUTF(leidoRutaArchUsuario);
+					
+					//segunda condicion corregida, depurador, no se puede ejecutar readUTF seguido para evaluar misma linea!!!
+						while(!(linea = entrada.readUTF()).equals("Archivo enviado.") && !linea.equals("No se pudo encontrar el archivo!!!!") ) {
+							System.out.println(linea);
+						}
+						System.out.println(linea);
+	    		}while(linea.equals("No se pudo encontrar el archivo!!!!"));
 			
-			
+    		sc.close();
+            cliente.close();
+            salida.close();
+            entrada.close();
 			
 			
 			
@@ -45,7 +63,8 @@ public class Cliente {
     }
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		new Cliente();
 
 	}
 
