@@ -118,8 +118,8 @@
 		<item key="nonavbar" value="false"/>
 		<item key="openinbrowser" value="false"/>
 		<item key="source" value="17"/>
-		<item key="antpath" value="F:\javaProyects\UsoResultSet\javadoc.xml"/>
-		<item key="destdir" value="F:\javaProyects\UsoResultSet\doc"/>
+		<item key="antpath" value="F:\javaProyects\ClienteServidorFichero\javadoc.xml"/>
+		<item key="destdir" value="F:\javaProyects\ClienteServidorFichero\doc"/>
 		<item key="doctitle" value="DOCU_TAREA_PSP02"/>
 		<section name="projects">
 			<section name="PSPTarea02">
@@ -187,10 +187,20 @@
 				<item key="destdir" value="C:\Users\espar\eclipse-workspace\prueba1\doc"/>
 				<item key="antpath" value="C:\Users\espar\eclipse-workspace\prueba1\javadoc.xml"/>
 			</section>
+			<section name="Cliente-Servidor-NumSecreto">
+				<item key="href" value=""/>
+				<item key="destdir" value="F:\javaProyects\Cliente-Servidor-NumSecreto\doc"/>
+				<item key="antpath" value="F:\javaProyects\Cliente-Servidor-NumSecreto\javadoc.xml"/>
+			</section>
 			<section name="refactor">
 				<item key="href" value=""/>
 				<item key="destdir" value="C:\Users\espar\eclipse-workspace\refactor\doc"/>
 				<item key="antpath" value="C:\Users\espar\eclipse-workspace\refactor\javadoc.xml"/>
+			</section>
+			<section name="CoffeesSQLite">
+				<item key="href" value=""/>
+				<item key="destdir" value="F:\javaProyects\CoffeesSQLite\doc"/>
+				<item key="antpath" value="F:\javaProyects\CoffeesSQLite\javadoc.xml"/>
 			</section>
 			<section name="aleatorios">
 				<item key="href" value=""/>
@@ -241,6 +251,11 @@
 				<item key="href" value=""/>
 				<item key="destdir" value="C:\Users\espar\eclipse-workspace\EntornoDesarrolloUT04\doc"/>
 				<item key="antpath" value="C:\Users\espar\eclipse-workspace\EntornoDesarrolloUT04\javadoc.xml"/>
+			</section>
+			<section name="ClienteServidorFichero">
+				<item key="href" value=""/>
+				<item key="destdir" value="F:\javaProyects\ClienteServidorFichero\doc"/>
+				<item key="antpath" value="F:\javaProyects\ClienteServidorFichero\javadoc.xml"/>
 			</section>
 			<section name="EntornoDesarrolloUT03">
 				<item key="href" value=""/>

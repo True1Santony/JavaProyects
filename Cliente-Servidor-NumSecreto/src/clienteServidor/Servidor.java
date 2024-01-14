@@ -7,9 +7,19 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.InputStream;
 
+/**<h1>Servidor</h1>
+ * <p>Clase con metodo main que publica el puerto <b>2000</b>, genera un número aleatorio
+ *   y espera que un cliente lo adivine. Una vez adivinado se cierra. </p>
+ * @author espar
+ * @version 1.0
+ */
 public class Servidor {
 
 	
+	/**
+	 * Constructor de Servidor.
+	 * El programa se desarrola en él.
+	 */
 	public Servidor() {
 	
 		
@@ -43,6 +53,10 @@ public class Servidor {
 	
 	}	
 	
+	/**
+	 * @return int a
+	 * Genera un entero de 0 a 99
+	 */
 	public int generaAleatorio() {
 		
 		int a=(int)(Math.random()*100);
@@ -50,6 +64,13 @@ public class Servidor {
 		return a;
 	}
 	
+	/**
+	 * @param numeroUsuario el numero que recibe el server
+	 * @param numeroAleatorio el numero que genera el server
+	 * @param entrda objeto DataInputStream para futuras aplicaciones, no se usa.
+	 * @param salida objeto DataOutputStream para generar respuesta al servidor.
+	 * @return boolean para finalizar el bucle
+	 */
 	public boolean respuesta(int numeroUsuario, int numeroAleatorio, DataInputStream entrda, DataOutputStream salida) {
 		boolean b=true;
 		
@@ -77,6 +98,10 @@ public class Servidor {
 			return b;
 	}
 	
+	/**
+	 * @param arg
+	 * Ejecución
+	 */
 	public static void main( String[] arg ) {
     
      new Servidor();

@@ -12,7 +12,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-
+/**<h1>Servidor</h1>
+ * <p>Clase con metodo main que publica el puerto <b>1500</b>, espera la ruta de un archivo válido
+ * si lo obtiene manda linea a linea su contenido, si no, devuelve un mensaje de error y se queda a la 
+ * escucha de nuevo. </p>
+ * @author espar
+ * @version 1.0
+ */
 public class Servidor {
 	
 	private DataInputStream datosEntrada;
@@ -20,6 +26,10 @@ public class Servidor {
 	private ServerSocket server;
 	private Socket cliente;
 	
+	/**
+	 * Constructor de Servidor.
+	 * El programa se desarrola en él.
+	 */
 	public Servidor() {
 	
 		
@@ -77,6 +87,9 @@ public class Servidor {
 
 }
 	
+	/**
+	 * Método para cerrar todas las comunicaciones y lectura/escritura
+	 */
 	public void cerrarTodo() {
 		try {
 			server.close();
@@ -89,7 +102,10 @@ public class Servidor {
 		}
         
 	}
-	
+	/**
+	 * @param arg
+	 * Ejecución
+	 */
 public static void main(String[] args) {
 		
 		new Servidor();

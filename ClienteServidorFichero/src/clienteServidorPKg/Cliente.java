@@ -9,7 +9,12 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
-
+/**<h1>Cliente</h1>
+ * <p>Clase con metodo main que intenta conectarse a traves del puerto <b>1500</b>, solicita al usuario 
+ * el nombre del archivo y lo envia al <b>Servidor</b> Una vez adivinado mostrado el contenido del archivo, se cierra. </p>
+ * @author espar
+ * @version 1.0
+ */
 public class Cliente {
 	
 	static final String Host = "localhost";
@@ -17,8 +22,11 @@ public class Cliente {
     private Socket cliente;
     private DataOutputStream salida;
     private DataInputStream entrada;
-    Scanner sc;
-    
+    private Scanner sc;
+    /**
+   	 * Constructor de Clinete.
+   	 * El programa se desarrola en él.
+   	 */
     public Cliente() {
     	String linea="";
     	try {
@@ -31,7 +39,7 @@ public class Cliente {
 				do {
 	    		
 				
-					System.out.println("Ingrese el archivo que quiere consultar.");
+					System.out.println("Ingrese el archivo que quiere consultar con extensión");
 					sc = new Scanner(System.in);
 		
 					String leidoRutaArchUsuario=sc.nextLine();
@@ -43,7 +51,7 @@ public class Cliente {
 							System.out.println(linea);
 						}
 						System.out.println(linea);
-	    		}while(linea.equals("No se pudo encontrar el archivo!!!!"));
+	    		}while(linea.equals("No se pudo encontrar el archivo!!!!"));//se va a ejecutar minetras el servidor no encuentre el archivo
 			
     		sc.close();
             cliente.close();
@@ -61,7 +69,10 @@ public class Cliente {
 		}
     	
     }
-
+    /**
+   	 * @param arg
+   	 * Ejecución
+   	 */
 	public static void main(String[] args) {
 	
 		new Cliente();
