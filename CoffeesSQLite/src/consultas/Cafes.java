@@ -8,6 +8,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * 
+ */
 public class Cafes {
 
 	private Connection con;
@@ -35,11 +38,122 @@ public class Cafes {
 		
 	}
 	
+	public void consultaCafeProveedor(int idProveedor) {
+		
+		
+			 try {
+				 String query = "SELECT c.*, s.* FROM COFFEES c " +
+			                "JOIN SUPPLIERS s ON c.SUP_ID = s.SUP_ID " +
+			                "WHERE s.SUP_ID = ?";
+				 
+				prepStatement = con.prepareStatement(query);
+				prepStatement.setInt(1, idProveedor);
+				resultSet= prepStatement.executeQuery();
+				
+				while(resultSet.next()) {
+					
+					System.out.printf("%-22s %-10d %-15.2f %-10d %-10d %-10s %-10s %-10s %-3s %-6s%n",
+				            resultSet.getString("COF_NAME"),
+				            resultSet.getInt("SUP_ID"),  // Reemplaza "ID_COLUMN2" con el nombre real de la segunda columna
+				            resultSet.getDouble("PRICE"),  // Reemplaza "ID_COLUMN3" con el nombre real de la tercera columna
+				            resultSet.getInt("SALES"),  // Reemplaza "ID_COLUMN4" con el nombre real de la cuarta columna
+				            resultSet.getInt("TOTAL"),
+				            resultSet.getString("SUP_NAME"),
+				            resultSet.getString("STREET"),
+				            resultSet.getString("CITY"),
+				            resultSet.getString("STATE"),
+				            resultSet.getString("ZIP"));
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		
+		
+		
+	}
+	
+public String borrarCafe(String cOF_NAME) {
+		
+		String respuesta="error, no se púdo borrar.";
+		
+		try {
+			prepStatement= con.prepareStatement("DELETE FROM COFFEES WHERE COF_NAME=?");
+			
+			prepStatement.setString(1, cOF_NAME);
+			
+			
+			int filasAfectadas = prepStatement.executeUpdate();
+			
+			
+			if (filasAfectadas > 0) {
+	            respuesta="BORRADO exitoso.";
+	        } else {
+	            respuesta="No se púdo borrar la fila.";
+	        }
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return respuesta;
+		
+	}
+	public String insetraFila(String cOF_NAME,int sUP_ID,double pRICE,int sALES,int tOTAL) {
+		
+		String respuesta="error, no se púdo insertar.";
+		
+		try {
+			prepStatement= con.prepareStatement("INSERT INTO COFFEES(COF_NAME, SUP_ID, PRICE, SALES, TOTAL) VALUES(?,?,?,?,?)");
+			
+			prepStatement.setString(1, cOF_NAME);
+			prepStatement.setInt(2, sUP_ID);
+			prepStatement.setDouble(3, pRICE);
+			prepStatement.setInt(4, sALES);
+			prepStatement.setInt(5, tOTAL);
+			
+			int filasAfectadas = prepStatement.executeUpdate();
+			
+			
+			if (filasAfectadas > 0) {
+	            respuesta="Inserción exitosa.";
+	        } else {
+	            respuesta="Error al insertar la fila.";
+	        }
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return respuesta;
+		
+	}
+	
 	public void buscaCafe(String nombreDelCafe) {
 		
 		try {
 			prepStatement=con.prepareStatement("Select * From coffees where COF_NAME=? ");
+			
+			prepStatement.setString(1, nombreDelCafe);
+			
 			resultSet=prepStatement.executeQuery();
+			
+			while(resultSet.next()) {
+				
+				System.out.printf("%-22s %-10d %-15.2f %-10d %-10d%n",
+	                      resultSet.getString(1),
+	                      resultSet.getInt(2),
+	                      resultSet.getDouble(3),
+	                      resultSet.getInt(4),
+	                      resultSet.getInt(5));
+			}
+			
 			
 			
 		} catch (SQLException e) {

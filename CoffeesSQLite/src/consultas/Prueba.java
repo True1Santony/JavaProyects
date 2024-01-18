@@ -1,9 +1,5 @@
 package consultas;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 
 /**
  * 
@@ -18,8 +14,23 @@ public class Prueba {
 	public static void main(String[] args) {
 		
 		Cafes cafe=new Cafes();
-		cafe.muestraDatosTabla();
 		
+		
+		/*
+		 * cafe.muestraDatosTabla();
+		 * 
+		 * System.out.println("+++++++++++++++++++++++++++++++++++++");
+		 * 
+		 * cafe.buscaCafe("Espresso");
+		 * 
+		 * System.out.println("+++++++++++++++++++++++++++++++++++++");
+		 * cafe.consultaCafeProveedor(101);
+		 */
+		String respuesta=cafe.insetraFila("Elquemegusta", 49, 10.99, 0, 0);
+		
+		System.out.println(respuesta);
+		
+		cafe.muestraDatosTabla();
 		
 		cafe.liberarRecursos();
 		cafe.cerrarConexion();
