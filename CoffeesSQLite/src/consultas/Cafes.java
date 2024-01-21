@@ -8,7 +8,10 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 /**
+ * Clase para gestionar la conexión a BD y su gestión
+ * 
  * 
  */
 public class Cafes {
@@ -19,7 +22,8 @@ public class Cafes {
 	private Statement statement;
 	
 	/**
-	 * Constructor de la clase Cafes
+	 * Constructor de la clase Cafes, inicia la conexión.
+	 * 
 	 */
 	public Cafes() {
 		
@@ -38,6 +42,10 @@ public class Cafes {
 		
 	}
 	
+	/**
+	 * Método que devuelve los cafes y los datos del proveedor con la busqueda por ID del proveedor.
+	 * @param idProveedor el campo de la tabla.
+	 */
 	public void consultaCafeProveedor(int idProveedor) {
 		
 		
@@ -54,9 +62,9 @@ public class Cafes {
 					
 					System.out.printf("%-22s %-10d %-15.2f %-10d %-10d %-10s %-10s %-10s %-3s %-6s%n",
 				            resultSet.getString("COF_NAME"),
-				            resultSet.getInt("SUP_ID"),  // Reemplaza "ID_COLUMN2" con el nombre real de la segunda columna
-				            resultSet.getDouble("PRICE"),  // Reemplaza "ID_COLUMN3" con el nombre real de la tercera columna
-				            resultSet.getInt("SALES"),  // Reemplaza "ID_COLUMN4" con el nombre real de la cuarta columna
+				            resultSet.getInt("SUP_ID"),  
+				            resultSet.getDouble("PRICE"),  
+				            resultSet.getInt("SALES"),  
 				            resultSet.getInt("TOTAL"),
 				            resultSet.getString("SUP_NAME"),
 				            resultSet.getString("STREET"),
@@ -66,15 +74,18 @@ public class Cafes {
 					
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
-		
-		
-		
-		
+	
 	}
 	
+/**
+ * Método para borrar un cafe por el nombre del café.
+ * @param cOF_NAME nombre del cafe a borrar.
+ * @return String con la respuesta si se ha borraro o no.
+ * 
+ */
 public String borrarCafe(String cOF_NAME) {
 		
 		String respuesta="error, no se púdo borrar.";
@@ -96,13 +107,22 @@ public String borrarCafe(String cOF_NAME) {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
 		return respuesta;
 		
 	}
+	/**
+	 * Método para insertar un nuevo cafe.
+	 * @param cOF_NAME nombre del cafe.
+	 * @param sUP_ID el id del proveedor.
+	 * @param pRICE el precio del cafe.
+	 * @param sALES las ventas acumuladas.
+	 * @param tOTAL el total de cafes.
+	 * @return String con la respuesta si se ha insetrado la fila o no.
+	 */
 	public String insetraFila(String cOF_NAME,int sUP_ID,double pRICE,int sALES,int tOTAL) {
 		
 		String respuesta="error, no se púdo insertar.";
@@ -127,7 +147,7 @@ public String borrarCafe(String cOF_NAME) {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -135,6 +155,10 @@ public String borrarCafe(String cOF_NAME) {
 		
 	}
 	
+	/**
+	 * Método que devuelve el registro del cafe buscado por nombre.
+	 * @param nombreDelCafe
+	 */
 	public void buscaCafe(String nombreDelCafe) {
 		
 		try {
@@ -157,13 +181,16 @@ public String borrarCafe(String cOF_NAME) {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
 		
 	}
 	
+	/**
+	 * Método que muestra todos los registro de la tabla Coffees
+	 */
 	public void muestraDatosTabla() {
 		
 		try {
@@ -191,7 +218,7 @@ public String borrarCafe(String cOF_NAME) {
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -199,7 +226,6 @@ public String borrarCafe(String cOF_NAME) {
 	
 	/**
 	 * Metodo para cerrar una conexion a BD.
-	 * @param c la conexion que se va a cerrar
 	 */
 	public void cerrarConexion() {
 		
@@ -207,7 +233,7 @@ public String borrarCafe(String cOF_NAME) {
 			con.close();
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
@@ -230,7 +256,7 @@ public String borrarCafe(String cOF_NAME) {
 				statement.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
