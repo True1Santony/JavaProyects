@@ -43,26 +43,26 @@ public class Servidor {
 		     while (true) {
 		        	   String leido=datosEntrada.readUTF(); //se lee el string recibido, el nombre del archivo.
 		            
-		            File file =new File(leido);
-		     if(file.exists()&& file.isFile()) {//si el file existe y la ruta es correcta
+		        	   File file =new File(leido);
+		            if(file.exists()&& file.isFile()) {//si el file existe y la ruta es correcta
 		           
-		    	 BufferedReader buffReader = new BufferedReader(new FileReader(leido));
+		            	BufferedReader buffReader = new BufferedReader(new FileReader(leido));
 		            
-		            String linea;
-		            while((linea= buffReader.readLine()) !=null) {
+		            	String linea;
+		            		while((linea= buffReader.readLine()) !=null) {
 		            	
-		            	datosSalida.writeUTF(linea);//se envia la linea
-		            	//StringBuilder mas el metodo .append con mejor rendimieno en caso de archivos grandes.
-		            }
-		            datosSalida.writeUTF("Archivo enviado.");//marcador fin envio para el clinete
-		            System.out.println("Archivo enviado.");
-		            cerrarTodo();
-		            break;//salir del bucle si se ha enviado
-			}else {
-	            System.out.println("No se pudo encontrar el archivo!!!!");
-
-				datosSalida.writeUTF("No se pudo encontrar el archivo!!!!");
-				}
+				            	datosSalida.writeUTF(linea);//se envia la linea
+				            	//StringBuilder mas el metodo .append con mejor rendimieno en caso de archivos grandes.
+		            		}
+			            datosSalida.writeUTF("Archivo enviado.");//marcador fin envio para el clinete
+			            System.out.println("Archivo enviado.");
+			            cerrarTodo();
+			            break;//salir del bucle si se ha enviado
+					}else {
+			            System.out.println("No se pudo encontrar el archivo!!!!");
+		
+						datosSalida.writeUTF("No se pudo encontrar el archivo!!!!");
+						}
 			}
 		            
 		            
