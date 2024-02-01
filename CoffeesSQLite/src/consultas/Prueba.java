@@ -32,6 +32,8 @@ public class Prueba {
 			}catch(Exception e) {
 				
 				System.out.println("Valor no válido");
+				sc.nextLine();//evita bucle infinito si se intoduce string.
+				
 			}
 			
 			

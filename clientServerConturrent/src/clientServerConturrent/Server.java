@@ -9,7 +9,10 @@ import java.net.Socket;
 import java.net.SocketException;
 
 
-
+/**
+ * Clase servidor implementa Runnable. Hace de proceso que lanza hilos de si mismo para cada cliente.
+ * 
+ */
 public class Server implements Runnable{
 
 	Socket cliente;

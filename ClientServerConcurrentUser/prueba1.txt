@@ -1,0 +1,18 @@
+tareas 1,,,,,,,,,,,,,,,,,
+mañana...
+terminar psp tarea
+terminar desarrolo de interfaces 
+tarde....
+comenzar con acceso a datos
+noche leer...
+ingles
+las otras 2
+
+
+/****************************************/
+servidor tiene que 
+- simultaneos clientes
+- evitar perdida de informacion
+- filtrar peticiones cliente
+- control de transacciones cliente
+- minotorear tiempos de respuesta de los clientes. ponerle un tiemo a un acept?

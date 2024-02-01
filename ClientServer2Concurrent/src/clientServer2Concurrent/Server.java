@@ -10,11 +10,14 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Clase servidor implementa Runnable. Hace de proceso que lanza hilos de si mismo para cada cliente.
+ * 
+ */
 public class Server implements Runnable {
 	
 	private DataInputStream inData;
 	private DataOutputStream outData;
-	private ServerSocket server;
 	private Socket client;
 	private static final int PORT=1500;
 	
@@ -27,6 +30,11 @@ public class Server implements Runnable {
 	
 	
 
+	/**
+	 * 
+	 * Comienzo del programa. Es el hilo principal encargado de quedarse a la escucha y crear hilos al hacer match con un cliente.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		try (ServerSocket sSocket = new ServerSocket(PORT)) {
@@ -48,6 +56,10 @@ public class Server implements Runnable {
 		
 	}
 
+	/**
+	 *Meto run del hilo, contiene toda la lógica.
+	 *
+	 */
 	@Override
 	public void run() {
 		
@@ -116,6 +128,9 @@ public class Server implements Runnable {
 
 
 
+	/**
+	 * Metodo void que cierra todas las comunicaciones 
+	 */
 	private void cerrarTodo() {
 		
 		

@@ -8,7 +8,10 @@ import java.net.Socket;
 import java.util.Scanner;
 
 
-
+/**
+ * Clase que lanza el proceso de cliente.
+ * 
+ */
 public class Client {
 
 	static final String Host = "localhost";
