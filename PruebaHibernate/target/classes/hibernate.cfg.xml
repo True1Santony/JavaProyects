@@ -11,6 +11,9 @@
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.format_sql">true</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
+  
   <mapping class="Primero.PruebaHibernate.Usuario"/>
+  <mapping class="Primero.PruebaHibernate.Profesor"/>
+  
  </session-factory>
 </hibernate-configuration>

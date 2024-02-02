@@ -19,9 +19,11 @@ public class App
         session.getTransaction().begin();
         
         Usuario user1= new Usuario();
+        Profesor profe1 = new Profesor("Espartaco","Nassekine","Maximov");
         user1.setName("Pepe");
         
         session.persist(user1);
+        session.persist(profe1);
         
         session.getTransaction().commit();
         
