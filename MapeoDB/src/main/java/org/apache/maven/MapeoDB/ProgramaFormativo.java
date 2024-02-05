@@ -11,10 +11,9 @@ import jakarta.persistence.Table;
 @Table(name = "PROG_FORMATIVOS")
 public class ProgramaFormativo {
 
-	
+	@Id
     @ManyToOne
     @JoinColumn(name = "NCONVENIO", referencedColumnName = "NCONVENIO")
-    @Id
     private Convenio convenio;
 
     @Id
@@ -68,6 +67,12 @@ public class ProgramaFormativo {
 
 	public void setcTerminal(String cTerminal) {
 		this.cTerminal = cTerminal;
+	}
+
+	@Override
+	public String toString() {
+		return "ProgramaFormativo [convenio=" + convenio + ", nPrograma=" + nPrograma + ", aProductiva=" + aProductiva
+				+ ", aEvaluacion=" + aEvaluacion + ", cTerminal=" + cTerminal + "]\n";
 	}
 
 		

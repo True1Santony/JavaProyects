@@ -48,7 +48,7 @@ public class Convenio {
     private int telCon;
 
     @Column(name = "TMOVIL")
-    private int tMovil;
+    private Integer tMovil;//para aceptar null
 
     @Column(name = "EMAIL")
     private String email;
@@ -154,11 +154,11 @@ public class Convenio {
 			this.telCon = telCon;
 		}
 
-		public int gettMovil() {
+		public Integer gettMovil() {
 			return tMovil;
 		}
 
-		public void settMovil(int tMovil) {
+		public void settMovil(Integer tMovil) {
 			this.tMovil = tMovil;
 		}
 
@@ -176,6 +176,15 @@ public class Convenio {
 
 		public void setDistancia(int distancia) {
 			this.distancia = distancia;
+		}
+
+		@Override
+		public String toString() {
+			return "Convenio [nConvenio=" + nConvenio + ", empresa=" + empresa + ", cif=" + cif + ", representante="
+					+ representante + ", nif=" + nif + ", direccion=" + direccion + ", poblacion=" + poblacion
+					+ ", provincia=" + provincia + ", cp=" + cp + ", telEmp=" + telEmp + ", contacto=" + contacto
+					+ ", telCon=" + telCon + ", tMovil=" + tMovil + ", email=" + email + ", distancia=" + distancia
+					+ "]\n";
 		}
 	
 }

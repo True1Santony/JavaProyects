@@ -59,4 +59,9 @@ public class Tutor{
 	public void settMovil(int tMovil) {
 		this.tMovil = tMovil;
 	}
+
+	@Override
+	public String toString() {
+		return "Tutor [nomTutor=" + nomTutor + ", convenio=" + convenio + ", tel=" + tel + ", tMovil=" + tMovil + "]\n";
+	}
 }

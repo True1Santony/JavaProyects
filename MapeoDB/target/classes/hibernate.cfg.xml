@@ -16,5 +16,6 @@
   <mapping class="org.apache.maven.MapeoDB.ProgramaFormativo"/>
   <mapping class="org.apache.maven.MapeoDB.Practica"/>
   <mapping class="org.apache.maven.MapeoDB.Tutor"/>
+  <mapping class="org.apache.maven.MapeoDB.PracticaId"/>
  </session-factory>
 </hibernate-configuration>

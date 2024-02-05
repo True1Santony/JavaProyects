@@ -1,6 +1,7 @@
 package org.apache.maven.MapeoDB;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,8 +31,7 @@ public class Alumno {
 	    private String nombre;
 
 	    @Column(name = "FECNA")
-	    @Temporal(TemporalType.DATE)
-	    private Date fecna;
+	    private LocalDate fecna;
 
 	    @Column(name = "DIRECCION")
 	    private String direccion;
@@ -98,11 +98,11 @@ public class Alumno {
 		this.nombre = nombre;
 	}
 
-	public Date getFecna() {
+	public LocalDate getFecna() {
 		return fecna;
 	}
 
-	public void setFecna(Date fecna) {
+	public void setFecna(LocalDate fecna) {
 		this.fecna = fecna;
 	}
 
@@ -168,6 +168,14 @@ public class Alumno {
 
 	public void setAfct(String afct) {
 		this.afct = afct;
+	}
+
+	@Override
+	public String toString() {
+		return "Alumno [dni=" + dni + ", nMatricula=" + nMatricula + ", ape1=" + ape1 + ", ape2=" + ape2 + ", nombre="
+				+ nombre + ", fecna=" + fecna + ", direccion=" + direccion + ", poblacion=" + poblacion + ", provincia="
+				+ provincia + ", cp=" + cp + ", tel=" + tel + ", tMovil=" + tMovil + ", email=" + email + ", afct="
+				+ afct + "]\n";
 	}
     
     
