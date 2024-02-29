@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-//import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -45,8 +45,8 @@ public class Logica {
 			
 			// Java DOM
 	        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	        DocumentBuilder builder;
-			builder = factory.newDocumentBuilder();
+	        DocumentBuilder builder= factory.newDocumentBuilder();;
+			 
 			Document document = builder.parse(new File("escrutinio_municipales_2015.xml"));
 			
 			 NodeList escrutinioSitioNodes = document.getElementsByTagName("escrutinio_sitio");

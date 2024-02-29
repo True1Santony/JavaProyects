@@ -23,6 +23,20 @@ public class Buffer {
 	}
 	
 	/**
+	 * @return the intPuntero
+	 */
+	public int getIntPuntero() {
+		return intPuntero;
+	}
+
+	/**
+	 * @param intPuntero the intPuntero to set
+	 */
+	public void setIntPuntero(int intPuntero) {
+		this.intPuntero = intPuntero;
+	}
+
+	/**
 	 * @param a introduce el char que se le pase por parametro.
 	 * Metodo sincronizado, un unico hilo lo ejecuta al mismo tiempo, exclucion mutua
 	 * sin paralelismo. Si el buffer esta completo espera, si no introduce el char en la posicion del

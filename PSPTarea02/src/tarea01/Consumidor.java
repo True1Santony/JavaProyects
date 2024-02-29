@@ -30,8 +30,9 @@ public class Consumidor implements Runnable {
 		
 		while(consumido<LIMITE) {
 			char a=buffer.sacar();
-			consumido++;
 			System.out.println("Recogido el carácter " + a + " del buffer---------");
+			consumido++;
+			
 		}
 	}
 

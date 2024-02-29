@@ -18,6 +18,7 @@ public class Main {
 		Thread t2=new Thread(new Consumidor(b));
 		
 		
+		
 		t1.start();
 		// sleep para que pueda proiducir hasta 6 char, si se elimana se ve el comportamiento real.
 		try {
@@ -26,6 +27,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		t2.start();
 	}
 

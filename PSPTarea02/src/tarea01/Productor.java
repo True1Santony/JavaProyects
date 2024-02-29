@@ -30,6 +30,7 @@ public class Productor implements Runnable {
 			
 			char a= Character.toUpperCase(letras.charAt((int)(Math.random()*letras.length())));
 			System.out.println("Depositado el carácter " + a + " en el buffer++++++++");//antes del metodo introducir() para correcto funcionamiento sin sleep() en main
+			System.out.println(buffer.getIntPuntero());
 			buffer.introducir(a);
 			producidos++;
 			

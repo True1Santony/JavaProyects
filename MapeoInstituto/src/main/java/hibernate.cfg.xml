@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+  <property name="hibernate.connection.password">tiger</property>
+  <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+  <property name="hibernate.connection.username">scott</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+  <property name="hibernate.current_session_context_class">thread</property>
+  <property name="hibernate.default_schema">scott</property>
+  <property name="show_sql">true</property>
+  <property name="hibernate.show_sql">false</property>
+  <property name="hibernate.hbm2ddl.auto">none</property>
+  <property name="hibernate.format_sql">true</property>
+  <mapping class="com.tarea.MapeoInstituto.Actividad"/>
+  <mapping class="com.tarea.MapeoInstituto.Alumno"/>
+  <mapping class="com.tarea.MapeoInstituto.Curso"/>
+  <mapping class="com.tarea.MapeoInstituto.Equipo"/>
+  <mapping class="com.tarea.MapeoInstituto.Calendario"/>
+  <mapping class="com.tarea.MapeoInstituto.CalendarioId"/>
+  <mapping class="com.tarea.MapeoInstituto.Departamento"/>
+  <mapping class="com.tarea.MapeoInstituto.Participante"/>
+  <mapping class="com.tarea.MapeoInstituto.ParticipanteId"/>
+  <mapping class="com.tarea.MapeoInstituto.Profesor"/>
+  <mapping class="com.tarea.MapeoInstituto.ProfesorCurso"/>
+  <mapping class="com.tarea.MapeoInstituto.ProfesorCursoId"/>
+  <mapping class="com.tarea.MapeoInstituto.Tutoria"/>
+ </session-factory>
+</hibernate-configuration>
