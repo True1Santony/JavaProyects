@@ -1,0 +1,18 @@
+He agregado un método: 
+ 
+ private static String daFecha() {
+	
+	  Date fechaActual = new Date();//fecha
+	  SimpleDateFormat formatoFechaHTTP = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
+	  formatoFechaHTTP.setTimeZone(TimeZone.getTimeZone("GMT"));
+	  String fecha="Date: " + formatoFechaHTTP.format(fechaActual);
+	  
+	  return fecha;
+  }
+
+para que devuelva la un String adecuado al protocolo HTTP. Lo envia al cliente antes del salto de linea.
+
+
+Para que gestione la concurrencia lo que hice fue implementar Runnable a la clase ServidorHTTP parqa que sea el hilo principal y lance un hilo nuevo de sí mismo cuando haya una petición nueva. Estos hilos secundarios se cierran tras tratar la peticion. Los hilos son los que hacen el tratamiento de las peticiones del clinete, he movido los metodos a run(). He tratado las excepciones para que no se caiga el proceso.
+
+ He hecho una impresión desde un ArrayList por ver que lanza un cliente(navegador) al cerrar el navegador, esta parte del codigo está comentada. 
