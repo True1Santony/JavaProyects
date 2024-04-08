@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>
+	<classpathentry kind="lib" path="libs/bloat-1.0.jar"/>
+	<classpathentry kind="lib" path="libs/db4o-8.0.276.16149-all-java5.jar"/>
+	<classpathentry kind="lib" path="libs/db4o-8.0.276.16149-instrumentation-java5.jar"/>
+	<classpathentry kind="lib" path="libs/db4o-8.0.276.16149-nqopt-java5.jar"/>
+	<classpathentry kind="lib" path="libs/db4o-8.0.276.16149-tools-java5.jar"/>
+	<classpathentry kind="lib" path="F:/javaProyects/UT04Db4O/libs/db4o.jar"/>
+	<classpathentry kind="lib" path="F:/descargas/db4o-all-java5-8.0.276.16149.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
