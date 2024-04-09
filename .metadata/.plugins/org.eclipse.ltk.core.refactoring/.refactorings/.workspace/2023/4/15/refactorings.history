@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Borrar el recurso &apos;Tarea UT10. Usuarios-Tareas&apos;." deleteContents="true" description="Borrar el recurso &apos;Tarea UT10. Usuarios-Tareas&apos;." element1="/Tarea UT10. Usuarios-Tareas" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1681385397837"/>
-</session>

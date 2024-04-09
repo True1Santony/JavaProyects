@@ -1,7 +1,0 @@
-
-public class frigorifico {
-	
-	
-	public String marca_frigo=miFrig;
-
-}
