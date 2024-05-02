@@ -1,0 +1,10 @@
+/* AUTOMATICALLY GENERATED ON Sun Apr 07 22:38:57 CEST 2024*/
+/* DO NOT EDIT */
+
+grant codeBase "file:/F:/javaProyects/UserPassSecurity/-" {
+  permission java.io.FilePermission "C:/datos/*", "read, write";
+};
+
+grant codeBase "file:/F:/javaProyects/UserPassSecurity/-" {
+  permission java.io.FilePermission "C:/datos", "read, write";
+};

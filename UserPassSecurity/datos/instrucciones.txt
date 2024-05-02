@@ -1,0 +1,17 @@
+- establecer en el PATH la ruta de la carpeta bin del jdk(no solo del jre) 1.8(version java).
+- crear el repositorio de claves(con los usuarios) con el que firmar los jar:
+	keytool -genkey -alias espartaco -keypass espartaco -keystore keystore -storepass Apr0bad0
+- no voy a crear un usuario, usare la clave privada para firmar y para entregar.
+- firmar el jar: jarsigner -keystore keystore -signedjar firmado.jar reader.jar espartaco
+se lanza jarsigner proporcionando el nombre del keystore, el nombre del jar resultante de la firma, el jar a firmar y el usuario de keystore que firma, preguntara su contraseña establecida anterirmente(espartaco).
+- configurar los permisos:
+	- ejecutar policytool o modificar java.policy
+	- si se ejecuta:
+		- abrimos java.policy y agregamos el almacen de claves (en este caso keystore) > ruta (file: "ruta") del keystore, url de un txt de la contraseña 			(espartaco).
+		- agregamos las politicas de seguridad: 
+			- seran necesarias 3:		
+				- una para la carpeta c:/datos
+				- para el contenido: c:/datos/*
+				- para el logger.
+- ejecutar java -jar Firmado.jar no hace falta nada mas el programa activa las popliticas de seguridad solo.
+ 
