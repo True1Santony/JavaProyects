@@ -17,6 +17,13 @@ public class Main {
 		Thread t1=new Thread(new Productor(b));
 		Thread t2=new Thread(new Consumidor(b));
 		
+		Thread t3=new Thread(new Productor(b));
+		Thread t4=new Thread(new Consumidor(b));
+		
+		Thread t5=new Thread(new Productor(b));
+		Thread t6=new Thread(new Consumidor(b));
+
+		
 		
 		
 		t1.start();
@@ -29,6 +36,11 @@ public class Main {
 		}
 		
 		t2.start();
+		t3.start();
+		t4.start();
+		t5.start();
+		t6.start();
+		
 	}
 
 }

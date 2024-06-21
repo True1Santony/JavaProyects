@@ -87,7 +87,7 @@ class ServidorHTTP implements Runnable{
     PrintWriter printWriter = new PrintWriter(
             socketCliente.getOutputStream(), true);
 
-    /*List <String> peticiones=new ArrayList<String>();Parte solo para ver que es lo que envia el clinete al servidor
+   /* List <String> peticiones=new ArrayList<String>();//Parte solo para ver que es lo que envia el clinete al servidor
     while((peticion = bufLeer.readLine()) != null) {
     	peticiones.add(peticion);
     	

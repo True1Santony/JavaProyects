@@ -33,6 +33,14 @@ public class Consumidor implements Runnable {
 			System.out.println("Recogido el carácter " + a + " del buffer---------");
 			consumido++;
 			
+			
+			try {
+				Thread.sleep((long) (Math.random()*1000));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 	}
 

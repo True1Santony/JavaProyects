@@ -2,13 +2,10 @@ package primero;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.Key;
@@ -50,9 +47,9 @@ public class Main {
 		
 		//voy a usar un cifrado simetrico, una llave, con ella se aplicara el algoritmo de cifrado.
 		
-		byteGenerados=obtenKey(usuario, pass);
+		byteGenerados=generateBytesFofKey(usuario, pass);
 		
-		llave=cifrarTexto(TEXTO_A_CIFRAR, byteGenerados);
+		llave=encryptText(TEXTO_A_CIFRAR, byteGenerados);
 		
 		leeDesencriptaMuestraTexto(llave);
 		
@@ -107,7 +104,7 @@ public class Main {
 		
 	}
 
-	private static SecretKey cifrarTexto(String textoNoCifrado, byte[] byteGenerados) {
+	private static SecretKey encryptText(String textoNoCifrado, byte[] byteGenerados) {
 		
 		SecretKey llavePrivada=null;
 		
@@ -158,7 +155,7 @@ public class Main {
 		
 	}
 
-	private static byte[] obtenKey(String usuario, String pass) {
+	private static byte[] generateBytesFofKey(String usuario, String pass) {
 		//array de byte de 128 bits
 		byte[] bitsKey = new byte[16];
 		

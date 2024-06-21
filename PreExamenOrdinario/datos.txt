@@ -1,0 +1,91 @@
+DROP TABLE libros;
+DROP TABLE lectores;
+
+DROP TYPE ty_libro;
+DROP TYPE ty_lector;
+DROP TYPE ty_prestamo;
+DROP TYPE ty_copia;
+DROP TYPE ty_multa;
+
+
+
+CREATE OR REPLACE TYPE ty_copia AS OBJECT(
+    identificador NUMBER,
+    estado VARCHAR2(20)
+);
+/
+
+CREATE OR REPLACE TYPE ty_libro AS OBJECT(
+    titulo VARCHAR2(30),
+    tipo VARCHAR2(30),
+    editorial VARCHAR2(30),
+    anyo NUMBER,
+    autor VARCHAR2(30),
+    copias_tabla ty_copia --tabla anidada hay que proporcionar los objetos ty_copia por cada ty_libro
+);
+/
+
+CREATE OR REPLACE TYPE ty_prestamo AS OBJECT(
+    inicio DATE,
+    fin DATE,
+    copia REF ty_copia --referencia a un objeto existente 
+);
+/
+
+CREATE TYPE ty_multa AS OBJECT (
+    fInicio DATE,
+    fFin DATE
+)
+/
+CREATE OR REPLACE TYPE ty_lector AS OBJECT(
+    nSocio NUMBER,
+    nombre VARCHAR2(20),
+    telefono VARCHAR2(15),
+    direccion VARCHAR2(50),
+    multa ty_multa,
+    prestamos ty_prestamo
+);
+/
+
+CREATE TABLE lectores (
+    nSocio NUMBER PRIMARY KEY,
+    lector_obj ty_lector
+);
+
+CREATE TABLE libros (
+    isbn NUMBER PRIMARY KEY,
+    libro_obj ty_libro
+);
+
+DECLARE
+    obj_ty_lector ty_lector;
+    obj_ty_lector2 ty_lector;
+    obj_ty_lector3 ty_lector;
+    obj_ty_multa ty_multa;
+BEGIN
+    obj_ty_multa :=ty_multa(SYSDATE,SYSDATE+10);
+    obj_ty_lector := ty_lector(1, 'Nombre1', '123456789', 'Dirección1', NULL, NULL);
+    obj_ty_lector2 := ty_lector(2, 'Nombre2', '123456789', 'Dirección2', NULL, NULL);
+    obj_ty_lector3 := ty_lector(3, 'Nombre3', '123456789', 'Dirección3', obj_ty_multa, NULL);
+    
+    -- Insertar el objeto en la tabla lectores
+    INSERT INTO lectores (nSocio, lector_obj) VALUES (1, obj_ty_lector);
+    INSERT INTO lectores (nSocio, lector_obj) VALUES (2, obj_ty_lector2);
+    INSERT INTO lectores (nSocio, lector_obj) VALUES (3, obj_ty_lector3);
+    
+    
+END;
+
+SELECT 
+    l.nSocio,
+    l.lector_obj.nSocio AS nSocio_lector,
+    l.lector_obj.nombre AS nombre_lector,
+    l.lector_obj.telefono AS telefono_lector,
+    l.lector_obj.direccion AS direccion_lector,
+    l.lector_obj.multa.fInicio AS fecha_inicio_multa,
+    l.lector_obj.multa.fFin AS fecha_fin_multa
+    
+FROM 
+    lectores l;
+    
+delete from lectores;
