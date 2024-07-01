@@ -1,4 +1,4 @@
-# Todo Java ![Java Logo](https://path-to-your-java-logo-image.png](https://www.flaticon.es/icono-gratis/java_226777) !!!
+# Todo Java ![Java Logo](https://www.flaticon.es/icono-gratis/java_226777) !!!
 
 Bienvenido al repositorio de proyectos formativos en Java. Este repositorio contiene una variedad de proyectos diseñados para aprender y practicar varios conceptos avanzados de Java y desarrollo de software.
 
