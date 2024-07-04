@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+">
+
+
+<!-- cargo el archivo de propiedades -->
+<context:property-placeholder location="classpath:datosEmpresa.propiedades"/>
+
+
+	<!-- creacion de la dependencia -->
+
+	<bean id="miInforme" class="com.inversioncontorl.Informe"></bean>
+
+
+	<bean id="miEmpleado" class="com.inversioncontorl.JefeEmpleado">
+	
+		<!-- asignacion de la dependencia -->
+		
+		<constructor-arg ref="miInforme"></constructor-arg>
+		
+	</bean>
+	
+	<bean id="miSecretario" class="com.inversioncontorl.SecretarioEmpleado">
+	
+		<!-- asignacion de la dependencia con un setter, name ha de ser sin set y la primera en minuscula
+		del metodo set de la clase que se va a inyectar la dependencia, ${nombre en propiedades} asigno el valor desde propiedades -->
+		
+		<property name="informeNuevo" ref="miInforme"></property>
+		<property name="mail" value="${mail}"></property>
+		<property name="nombreEmpresa" value="${nombreEmpresa}"></property>
+	
+	</bean>
+
+
+</beans>
