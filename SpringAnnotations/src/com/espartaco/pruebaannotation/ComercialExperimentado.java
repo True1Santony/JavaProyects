@@ -1,6 +1,11 @@
 package com.espartaco.pruebaannotation;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,6 +17,7 @@ import org.springframework.stereotype.Component;
  * */
 
 @Component
+//@Scope("prototype")
 public class ComercialExperimentado implements IEmpleados {
 	
 	//este campo es lo que va a inyectar al objeto Spring
@@ -20,6 +26,7 @@ public class ComercialExperimentado implements IEmpleados {
 	 * Inyeccion de dependencias con un campo de clase. Usa reflexion.
 	 */
 	@Autowired
+	@Qualifier("informeFinancieroTrim1")//se puede especificar la clase de la que va a obtener la inyeccion
 	private ICreacionInformesFinanciero informeFinanciero;
 	
 	
@@ -68,5 +75,25 @@ public class ComercialExperimentado implements IEmpleados {
 		//return "Informe del comercial, las ventas que ha hecho";
 		return informeFinanciero.getInformeFinanciero();
 	}
-
+	
+	/**
+	 * Metodo para ejecutar tras creacion del bean
+	 */
+	@PostConstruct
+	public void ejecutaTrasCreacion() {
+		
+		System.out.println("Me ejecuto tras la creacion del Bean");
+		
+	}
+	
+	
+	/**
+	 * Metodo para ejecutar despues del cierre del contexto de beans
+	 */
+	@PreDestroy
+	public void ejecutaAntesDestruir() {
+		
+		System.out.println("Me ejecuto antes de cerrar");
+		
+	}
 }
