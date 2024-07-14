@@ -18,7 +18,9 @@ ${empresaNueva}
 
 <img class="img-reducida"  alt="foto" src="${pageContext.request.contextPath}/res/images/hoja.jpg">
 
-
+<!-- Agregar un enlace a la página index -->
 <p><a href="${pageContext.request.contextPath}/">Volver a la página principal</a></p>
+
+
 </body>
 </html>

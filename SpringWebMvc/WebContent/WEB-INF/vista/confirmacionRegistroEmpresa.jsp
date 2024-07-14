@@ -5,18 +5,15 @@
 <head>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/res/style/estilos.css">
 <meta charset="UTF-8">
-<title>web http</title>
+<title>Confirmación del registro</title>
 </head>
 <body>
-<h1>Hola Spring MVC</h1>
 
-<a href="principal/muestraFormulario">Ir al formulario</a>
-<br><br>
-<a href="empresa/muestraFormulario">Ir al formulario de alta de Empresa</a>
+La empresa <b>${laEmpresa.nombre} ${laEmpresa.tipoEmpresa}</b>  se ha registrado correctamente !!!
 
-<p/>
+<p>La localidad es: <b>${laEmpresa.localidad}</b></p>
 
-<img alt="foto" src="${pageContext.request.contextPath}/res/images/garlic.jpg">
+<p><a href="${pageContext.request.contextPath}/">Volver a la página principal</a></p>
 
 </body>
 </html>
