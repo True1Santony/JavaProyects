@@ -23,16 +23,59 @@
             <tr>
                 <td>Localidad:</td>
                 <td><form:select path="localidad">
-                		<form:option value="Madrid" lable="Madrid"/>
-                		<form:option value="Barcelona" lable="Barcelona"/>
-                		<form:option value="Galicia" lable="Galicia"/>
-                		<form:option value="Leon" lable="Leon"/>
-                		<form:option value="Toledo" lable="Toledo"/>
-                		<form:option value="Palencia" lable="Palencia"/>
-                		<form:option value="Valencia" lable="Valencia"/>
+                		<form:option value="Madrid" label="Madrid"/>
+                		<form:option value="Barcelona" label="Barcelona"/>
+                		<form:option value="Galicia" label="Galicia"/>
+                		<form:option value="Leon" label="Leon"/>
+                		<form:option value="Toledo" label="Toledo"/>
+                		<form:option value="Palencia" label="Palencia"/>
+                		<form:option value="Valencia" label="Valencia"/>
                 	</form:select> 
                 </td>
             </tr>
+            <tr>
+                <td><b>Seleccione la Ciudad:_____________________________</b> </td>
+                <td><b>_____________________</b></td>
+            </tr>
+            <tr>
+                <td>Barcelona: </td>
+                <td><form:radiobutton path="ciudadEmpresa" value="Barcelona"/></td>
+            </tr>
+            <tr>
+                <td>Madrid: </td>
+                <td><form:radiobutton path="ciudadEmpresa" value="Madrid"/></td>
+            </tr>
+            <tr>
+                <td>Galicia: </td>
+                <td><form:radiobutton path="ciudadEmpresa" value="Galicia"/></td>
+            </tr>
+            <tr>
+                <td>Leon: </td>
+                <td><form:radiobutton path="ciudadEmpresa" value="Leon"/></td>
+            </tr>
+            <tr>
+                <td>Toledo: </td>
+                <td><form:radiobutton path="ciudadEmpresa" value="Toledo"/></td>
+            </tr>
+            
+             <tr>
+                <td><b>Seleccione los dias de atención:___________________</b> </td>
+                <td><b>_____________________</b></td>
+            </tr>
+            <tr>
+                <td>Lunes: 
+                	<form:checkbox path="diaAtencion" value="Lunes"/>
+                	Martes: 
+                	<form:checkbox path="diaAtencion" value="Martes"/>
+                	Miercoles: 
+                	<form:checkbox path="diaAtencion" value="Miercoles"/>
+                	Jueves: 
+                	<form:checkbox path="diaAtencion" value="Jueves"/>
+                	Viernes: 
+                	<form:checkbox path="diaAtencion" value="Viernes"/>
+                </td>
+            </tr>
+            
             <tr>
                 <td>
                 	<input type="submit" value="Registrar"/>

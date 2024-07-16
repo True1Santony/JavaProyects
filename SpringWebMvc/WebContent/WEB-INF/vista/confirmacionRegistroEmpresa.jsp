@@ -12,6 +12,8 @@
 La empresa <b>${laEmpresa.nombre} ${laEmpresa.tipoEmpresa}</b>  se ha registrado correctamente !!!
 
 <p>La localidad es: <b>${laEmpresa.localidad}</b></p>
+<p>La Ciudad de la empresa escogida: <b>${laEmpresa.ciudadEmpresa}</b></p>
+<p>Los días que se podra atender a la empresa son:  <b>${laEmpresa.diaAtencion}</b></p>
 
 <p><a href="${pageContext.request.contextPath}/">Volver a la página principal</a></p>
 
