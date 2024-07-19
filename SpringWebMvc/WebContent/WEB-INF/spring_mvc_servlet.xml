@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="
@@ -11,12 +11,19 @@
     	http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	
-	<context:component-scan base-package="com.espartaco.spring.mvc" />
 
-	<mvc:annotation-driven/>
+	<!--* Component Scan: Detecta automáticamente los componentes anotados en el paquete especificado. 
+		* Annotation-Driven: Habilita el uso de anotaciones en Spring MVC. 
+		* InternalResourceViewResolver: Configura la resolución de vistas JSP. 
+		* Static Resources Handling: Define cómo servir archivos estáticos. 
+		* ResourceBundleMessageSource: Configura la fuente de mensajes para la internacionalización. -->
 
-	
+	<context:component-scan
+		base-package="com.espartaco.spring.mvc" />
+
+	<mvc:annotation-driven />
+
+
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/vista/" />
@@ -24,6 +31,13 @@
 	</bean>
 
 	<mvc:resources location="/res/" mapping="/res/**"></mvc:resources>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+
+		<property name="basenames" value="resources/messages"></property>
+
+	</bean>
 
 </beans>
 
