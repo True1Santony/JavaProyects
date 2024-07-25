@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+  <property name="hibernate.connection.password">Apr0bad0</property>
+  <property name="hibernate.connection.url">jdbc:mysql://192.168.1.36:3306/PruebasHibernate</property>
+  <property name="hibernate.connection.username">espartaco</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.hbm2ddl.auto">none</property>
+  <property name="hibernate.format_sql">true</property>
+  <mapping class="com.espartaco.clasesMapeadas.Clientes"/>
+  <!--  <mapping class="org.apache.maven.MapeoDB.Alumno"/>
+  <mapping class="org.apache.maven.MapeoDB.Convenio"/>
+  <mapping class="org.apache.maven.MapeoDB.ProgramaFormativo"/>
+  <mapping class="org.apache.maven.MapeoDB.Practica"/>
+  <mapping class="org.apache.maven.MapeoDB.Tutor"/>
+  <mapping class="org.apache.maven.MapeoDB.PracticaId"/>-->
+ </session-factory>
+</hibernate-configuration>
