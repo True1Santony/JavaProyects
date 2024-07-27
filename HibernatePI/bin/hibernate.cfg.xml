@@ -9,9 +9,10 @@
   <property name="hibernate.connection.username">espartaco</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
   <property name="hibernate.show_sql">true</property>
-  <property name="hibernate.hbm2ddl.auto">none</property>
+  <property name="hibernate.hbm2ddl.auto">update</property>
   <property name="hibernate.format_sql">true</property>
   <mapping class="com.espartaco.clasesMapeadas.Clientes"/>
+  <mapping class="com.espartaco.clasesMapeadas.Detalles_cliente"/>
   <!--  <mapping class="org.apache.maven.MapeoDB.Alumno"/>
   <mapping class="org.apache.maven.MapeoDB.Convenio"/>
   <mapping class="org.apache.maven.MapeoDB.ProgramaFormativo"/>

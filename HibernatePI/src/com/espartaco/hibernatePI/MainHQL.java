@@ -2,12 +2,17 @@ package com.espartaco.hibernatePI;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
+
+
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.espartaco.clasesMapeadas.Clientes;
+import com.espartaco.clasesMapeadas.Detalles_cliente;
 
 
 /**
@@ -18,6 +23,8 @@ import com.espartaco.clasesMapeadas.Clientes;
  * @version 1.0
  */
 public class MainHQL {
+	
+	private static Scanner scanner= new Scanner(System.in);
 
 	public static void main(String[] args) {
 
@@ -28,15 +35,23 @@ public class MainHQL {
         
         try {
 
-        	imprimeTodosLosClientes(session);
+        	//imprimeTodosLosClientes(session);
         	
-        	imprimeClientePorApellido(session, "Nassekine");
+        	//imprimeClientePorApellido(session, "Nassekine");
         	
-        	imprimeClientesPorNombreOapellido(session,"Espartaco","Calle Princesa");
+        	//imprimeClientesPorNombreOapellido(session,"Espartaco","Calle Princesa");
+        	
+        	//updateClientePorId(session, 1);
+        	//imprimeClientePorApellido(session, "Nassekine");
+        	
+        	//insertaNuevoClienteConDetalles(session,"Marck","Anzony","Av. de la Trifulca","www.losvengadores.com", "659645856", "Poder a topeee");
+        	
+        	//eliminaClienteConDetallesPorID(session,23);
         	
         }finally {
         	
         	session.close();
+        	scanner.close();
         	
         }
         
@@ -107,6 +122,80 @@ public class MainHQL {
 		      	session.getTransaction().commit();
 	      	
 	      }
+	  
+	  public static void updateClientePorId(Session session, int id) {
+	      	
+	      	session.beginTransaction();
+	      	
+	      	Clientes cliente =session.get(Clientes.class, id);
+	      	
+	      	System.out.println("Que por que nombre quiere aclualizar a: " + cliente);
+	      	
+	      	String nombre=scanner.nextLine();
+	      	
+	      	cliente.setNombre(nombre);
+		      	
+	      	session.getTransaction().commit();
+	      	
+	      }
+	  
+	  public static void insertaNuevoClienteConDetalles(Session session,String nombre,String apellido,String direccion,String web, String numero, String comentario) {
+		  
+		Transaction transaction= null;
+		  
+		try {
+			
+			transaction= session.beginTransaction();
+			
+			Clientes cliente = new Clientes(nombre, apellido, direccion);
+	      	
+	      	Detalles_cliente detallesCliente = new Detalles_cliente(web,numero,comentario);
+	      	
+	      	cliente.setDetalles(detallesCliente);
+	      	
+	      	detallesCliente.setCliente(cliente);
+			
+	      	session.save(cliente);
+	      	
+	      	transaction.commit();
+			
+		}catch(Exception e) {
+			
+			transaction.rollback();
+			
+			e.printStackTrace();
+			
+		}
+		  
+		
+	  }
+	  
+	  public static void eliminaClienteConDetallesPorID(Session session, int id) {
+		  
+		  Transaction transaction= null;
+		  
+		  try {
+			  
+			  transaction = session.beginTransaction();
+			  
+			  Clientes cliente = session.get(Clientes.class, id);
+			  
+			  session.delete(cliente);
+			  
+			  transaction.commit();
+			  
+			  System.out.println("COMMIT");
+			  
+		  }catch(Exception e){
+			  
+			  e.printStackTrace();
+			  
+			  System.out.println("ROLLBACK");
+			  
+			  transaction.rollback();
+		  }
+		  
+	  }
 	  
 	
 
