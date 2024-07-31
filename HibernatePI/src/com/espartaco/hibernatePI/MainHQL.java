@@ -1,6 +1,7 @@
 package com.espartaco.hibernatePI;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.espartaco.clasesMapeadas.Clientes;
 import com.espartaco.clasesMapeadas.Detalles_cliente;
+import com.espartaco.clasesMapeadas.Pedido;
 
 
 /**
@@ -44,9 +46,25 @@ public class MainHQL {
         	//updateClientePorId(session, 1);
         	//imprimeClientePorApellido(session, "Nassekine");
         	
-        	//insertaNuevoClienteConDetalles(session,"Marck","Anzony","Av. de la Trifulca","www.losvengadores.com", "659645856", "Poder a topeee");
+        	//insertaNuevoClienteConDetalles(session,"Arnold","Swarchneger","Calle California 54 ","www.regresoalpasado.com", "659645856", "Hasta la Vista Baby");
         	
         	//eliminaClienteConDetallesPorID(session,23);
+        	
+        	//consultaDetalleCliente(session, 1);
+        	
+        	//eliminaDetallesCliente(session,10);
+        	
+        	/*ArrayList<Pedido> pedidos= new ArrayList();
+        	
+        	Pedido pedido1=new Pedido (new Date(124,6,5));
+        	Pedido pedido2=new Pedido (new Date(124,6,6));
+        	Pedido pedido3=new Pedido (new Date(124,6,7));
+        	
+        	pedidos.add(pedido1);
+        	pedidos.add(pedido2);
+        	pedidos.add(pedido3);
+        	
+        	insertaPedidoAlCliente(session, 26, pedidos);*/
         	
         }finally {
         	
@@ -196,6 +214,91 @@ public class MainHQL {
 		  }
 		  
 	  }
+	  
+	  public static void consultaDetalleCliente(Session session, int idDetalles) {
+		  
+		  session.beginTransaction();
+		  
+		  Detalles_cliente detalles = session.get(Detalles_cliente.class, idDetalles);
+		  
+		  System.out.println(detalles);
+		  
+		  System.out.println(detalles.getCliente());
+		  
+		  session.close();
+		  
+	  }
+	  
+  public static void eliminaDetallesCliente(Session session, int idDetalles) {
+		  
+		  Transaction transaction= null;
+		  
+		  try {
+			  
+			  transaction = session.beginTransaction();
+			  
+			  Detalles_cliente detalle = session.get(Detalles_cliente.class, idDetalles);
+			  
+			  session.delete(detalle);
+			  
+			  transaction.commit();
+			  
+			  System.out.println("COMMIT, borrado");
+			  
+		  }catch(Exception e){
+			  
+			  e.printStackTrace();
+			  
+			  System.out.println("ROLLBACK, no se ha eliminado");
+			  
+			  transaction.rollback();
+		  }
+		  
+	  }
+  
+ /**
+  *  
+  * @param session
+  * @param idCliente
+  * @param fecha new date(año,mes, dia) el año es 1900 + el numero a alcanzar el año deseado 124=2024-1900
+  */
+  public static void insertaPedidoAlCliente(Session session, int idCliente, Date fecha) {
+	  
+	  session.beginTransaction();
+	  
+	  Clientes cliente = session.get(Clientes.class, idCliente);// recupero al cliente solicitado
+	  
+	  Pedido pedido = new Pedido(fecha);
+	  
+	  cliente.agregaPedido(pedido);
+	  
+	  session.save(pedido);
+	  
+	  session.getTransaction().commit();
+  }
+  
+  /**
+   * Metodo sobrecargado que acepta varios pedidos.
+   * @param session
+   * @param idCliente
+   * @param pedido
+   */
+ public static void insertaPedidoAlCliente(Session session,int idCliente, List<Pedido> pedidos) {
+	  
+	 session.beginTransaction();
+	  
+	    Clientes cliente = session.get(Clientes.class, idCliente); // Recupero al cliente solicitado
+	    
+	    for (Pedido pedido : pedidos) {
+	        cliente.agregaPedido(pedido); // Agrega cada pedido al cliente
+	        session.save(pedido); // Guarda cada pedido individualmente
+	    }
+	  
+	    session.save(cliente); // Guarda el cliente después de agregar todos los pedidos
+	  
+	    session.getTransaction().commit();
+	
+  }
 	  
 	
 

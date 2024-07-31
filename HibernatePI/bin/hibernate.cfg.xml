@@ -13,6 +13,7 @@
   <property name="hibernate.format_sql">true</property>
   <mapping class="com.espartaco.clasesMapeadas.Clientes"/>
   <mapping class="com.espartaco.clasesMapeadas.Detalles_cliente"/>
+  <mapping class="com.espartaco.clasesMapeadas.Pedido"/>
   <!--  <mapping class="org.apache.maven.MapeoDB.Alumno"/>
   <mapping class="org.apache.maven.MapeoDB.Convenio"/>
   <mapping class="org.apache.maven.MapeoDB.ProgramaFormativo"/>
