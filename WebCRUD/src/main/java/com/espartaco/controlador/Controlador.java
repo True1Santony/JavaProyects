@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.espartaco.DAO.ClienteDAO;
 import com.espartaco.DAO.IclienteDAO;
 import com.espartaco.controladorEntity.Cliente;
 
@@ -15,15 +14,9 @@ import com.espartaco.controladorEntity.Cliente;
 @RequestMapping("/cliente")
 public class Controlador {
 	
-	//inyecta el objeto cuando es requerido
 	@Autowired
 	private IclienteDAO clienteDAO;
 	
-/**
- * Obtiene los clientes desde ClienteDAO y los agrega al modelo
- * @param modelo
- * @return
- */
 	@RequestMapping("/lista")
 	public String listaClientes(Model modelo) {
 		
@@ -35,6 +28,13 @@ public class Controlador {
 		
 		return"lista-clientes";
 		
+	}
+	
+	@RequestMapping("/formularioAgregarCliente")
+	public String muestraFormularioAgregar(Model model) {
+		
+		
+		return "formularioNuevoCliente";
 	}
 	
 }

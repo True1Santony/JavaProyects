@@ -15,7 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Paquete de escaneo de componentes, escanea todos los paquetes -->
-	<context:component-scan base-package="com.espartaco" />
+	<context:component-scan base-package="com.espartaco"/>
 
 	<!-- Conversión formateo y validación-->
 	<mvc:annotation-driven/>
