@@ -35,4 +35,14 @@ public class ClienteDAO implements IclienteDAO {
 		return clientes;
 	}
 
+	@Override
+	@Transactional
+	public void insertarCliente(Cliente cliente) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		//insert cliente
+		session.save(cliente);	
+	}
+
 }

@@ -9,7 +9,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-j-8.2.0.jar"/>
 	<classpathentry kind="lib" path="/HibernatePI/lib/mysql-connector-j-8.2.0.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mysql-connector-j-8.2.0.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/antlr-2.7.7.jar"/>
@@ -98,5 +97,7 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/spring-websocket-5.1.4.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/stax-ex-1.8.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/txw2-2.3.1.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/logback-classic-1.5.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/logback-core-1.5.6-javadoc.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
