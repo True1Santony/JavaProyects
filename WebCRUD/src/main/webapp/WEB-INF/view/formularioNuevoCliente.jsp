@@ -13,6 +13,8 @@
 	<h2>Inserte los datos del nuevo cliente</h2>
 
 	<form:form action="insertarCliente" modelAttribute="cliente" method="POST">
+	
+		<form:hidden path="id" />
 		
 			<table>
 					

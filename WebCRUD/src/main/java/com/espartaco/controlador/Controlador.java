@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.espartaco.DAO.IclienteDAO;
@@ -61,6 +62,25 @@ public class Controlador {
 		
 		return "redirect:/cliente/lista";
 	}
+	
+	@GetMapping("/muestraFormularioActualizar")
+	public String muestraFormularioActualizar(@RequestParam("IdCliente") int id, Model model) {
+		
+		Cliente cliente = clienteDAO.getCliente(id);
+		
+		model.addAttribute("cliente", cliente);
+		
+		return "formularioNuevoCliente";
+	}
+	
+	@GetMapping("/muestraEliminar")
+	public String muestraFormularioEliminar(@RequestParam("IdCliente") int id) {
+		
+		clienteDAO.eliminarCliente(id);
+		
+		return "redirect:/cliente/lista";
+	}
+	
 	
 	
 }

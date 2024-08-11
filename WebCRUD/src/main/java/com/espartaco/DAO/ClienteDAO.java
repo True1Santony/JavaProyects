@@ -42,7 +42,31 @@ public class ClienteDAO implements IclienteDAO {
 		Session session = sessionFactory.getCurrentSession();
 		
 		//insert cliente
-		session.save(cliente);	
+		session.saveOrUpdate(cliente);	
+	}
+
+	@Override
+	@Transactional
+	public Cliente getCliente(int id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+
+		Cliente cliente = session.get(Cliente.class, id);
+		
+		return cliente;
+	}
+
+	@Override
+	@Transactional
+	public void eliminarCliente(int id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		Cliente cliente = session.get(Cliente.class, id);
+		
+		session.delete(cliente);
+		
+		
 	}
 
 }

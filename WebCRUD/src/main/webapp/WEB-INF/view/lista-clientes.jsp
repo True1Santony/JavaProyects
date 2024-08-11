@@ -21,10 +21,17 @@
 			<th>Apellido</th>
 			<th>Dirección</th>
 			<th>Modificar</th>
+			<th>Eliminar</th>
 		</tr>
 		<c:forEach var="cliente" items="${clientes}">
 		
 			<c:url var="linkActualizar" value="/cliente/muestraFormularioActualizar">
+			
+				<c:param name="IdCliente" value="${cliente.id}"/>
+			
+			</c:url>
+			
+			<c:url var="linkEliminar" value="/cliente/muestraEliminar">
 			
 				<c:param name="IdCliente" value="${cliente.id}"/>
 			
@@ -36,7 +43,10 @@
 				<td>${cliente.apellidos}</td>
 				<td>${cliente.direccion}</td>
 				<td>
-					<a href="${linkActualizar}"><input type="button" value="Modificar"></a>
+					<a href="${linkActualizar}"><input type="button" value="Modificar"/></a>
+				</td>
+				<td>
+					<a href="${linkEliminar}"><input type="button" value="Eliminar" onclick="if(!confirm('Va a eliminar un registro. ¿Esta seguro?')) return false"/></a>
 				</td>
 			</tr>
 		</c:forEach>
