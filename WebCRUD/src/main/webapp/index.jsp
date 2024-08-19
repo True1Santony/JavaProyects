@@ -14,7 +14,7 @@
 </div>
 
 <div class="nav">
-    <a href="#">Clientes</a>
+    <a href="${pageContext.request.contextPath}/cliente/lista">Clientes</a>
     <a href="#">Proyectos</a>
     <a href="#">Contacto</a>
     <a href="#">Perfil</a>
