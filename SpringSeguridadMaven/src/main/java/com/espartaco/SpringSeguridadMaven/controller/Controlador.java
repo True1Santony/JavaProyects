@@ -13,5 +13,14 @@ public class Controlador {
 	}
 	
 	
+	/**
+	 * ruta para administradores
+	 */
+	@GetMapping("/administradores")
+	public String muestraAdministradores() {
+		
+		return "administradores";
+	}
+	
 	
 }

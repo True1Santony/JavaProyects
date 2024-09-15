@@ -24,13 +24,13 @@ public class SeguridadConfigurador {
 		        UserDetails user2 = User.withDefaultPasswordEncoder()
 		            .username("admin")
 		            .password("123")
-		            .roles("ADMIN")
+		            .roles("ADMIN","USER")
 		            .build();
 
 		        UserDetails user3 = User.withDefaultPasswordEncoder()
 		            .username("manager")
 		            .password("123")
-		            .roles("MANAGER")
+		            .roles("MANAGER","USER")
 		            .build();
         return new InMemoryUserDetailsManager(user1, user2, user3);
     }
@@ -40,13 +40,18 @@ public class SeguridadConfigurador {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 	    return http
 	        .authorizeHttpRequests()
-	            .requestMatchers("/login", "/WEB-INF/view/login.jsp").permitAll()
+	            .requestMatchers("/", "/WEB-INF/view/login.jsp").permitAll()//publico
+	            	.requestMatchers("/administradores/**").hasRole("ADMIN")
+	            	.requestMatchers("/usuarios/**").hasRole("USER")
+	            	.requestMatchers("/manager/**").hasRole("MANAGER")
 	            .anyRequest().authenticated()
 	        .and()
 	        .formLogin()
 	            .loginPage("/login")
 	            .loginProcessingUrl("/autenticacionUsuario")
 	            .permitAll()
+	        .and()
+	        .logout().permitAll()
 	        .and()
 	        .build();
 	}
