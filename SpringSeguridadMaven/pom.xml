@@ -131,6 +131,19 @@
 	    <version>${springsecurity.version}</version>
 	</dependency>
 
+	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java    01 conector-->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.30</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.mchange/c3p0       02 pool de conexiones-->
+	<dependency>
+	    <groupId>com.mchange</groupId>
+	    <artifactId>c3p0</artifactId>
+	    <version>0.9.5.5</version>
+	</dependency>
 
 
   </dependencies>

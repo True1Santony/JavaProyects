@@ -12,7 +12,7 @@
     </root>
 
     <!-- Specific Logger Configurations -->
-    <logger name="org.springframework" level="DEBUG"/>
-    <logger name="org.springframework.web" level="DEBUG"/>
-    <logger name="org.springframework.security" level="DEBUG"/>
+    <logger name="org.springframework" level="OFF"/>
+    <logger name="org.springframework.web" level="OFF"/>
+    <logger name="org.springframework.security" level="OFF"/>
 </configuration>

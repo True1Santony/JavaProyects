@@ -19,27 +19,46 @@
 	<h3>Ole, hecho</h3>
 	
 	<p> Usuario: <security:authentication property="principal.username"/>  </p>
-	<br/>
+	
 	<p> Rol: <security:authentication property="principal.authorities"/> </p>
 	
-	<!-- Link para administradores -->
+		
+		<security:authorize access="hasRole('ADMIN')">
+		
+			<!-- Link para administradores -->
+		
+			<p>
+			
+			<a href="${pageContext.request.contextPath}/administradores">Administración</a>
+			
+			</p>
+		
+		</security:authorize>
+		
+		
+		<security:authorize access="hasRole('USER')">
+		
+			<!-- Link para usuarios -->
+		
+			<p>
+			
+			<a href="${pageContext.request.contextPath}/usuarios">Usuarios</a>
+			
+			</p>
+		
+		</security:authorize>
+		
+		<security:authorize access="hasRole('MANAGER')">
+		
+			<!-- Link para managers -->
+			
+			<p>
+			
+			<a href="${pageContext.request.contextPath}/managers">Manager</a>
+			
+			</p>
 	
-	<p>
-	
-	<a href="${pageContext.request.contextPath}/administradores">Administración</a>
-	
-	</p>
-	
-	<!-- Link para usuarios -->
-		<a href="${pageContext.request.contextPath}/usuarios">Usuarios</a>
-	
-	
-	<p></p>
-	
-	<!-- Link para administradores -->
-	<a href="${pageContext.request.contextPath}/manager">Manager</a>
-	<p></p>
-	
+		</security:authorize>
 	
 	<form:form action="${pageContext.request.contextPath }/logout" method="POST">
 	
